@@ -31,7 +31,11 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-light">🌙 Dark Mode</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -53,17 +57,35 @@
         </p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h2 class="text-center">Projects</h2>
-        <input type="text" id="projectSearch" class="form-control mb-3" placeholder="Search Projects...">
-        <div class="row" id="projectContainer">
-            <div class="col-md-4 project-card" data-category="analytics"><h5>Hospital Readmission Analysis</h5><p>Developed predictive models (XGBoost, ROC-AUC: 0.69) to optimize readmission predictions.</p></div>
-            <div class="col-md-4 project-card" data-category="marketing"><h5>Hanover Theatre Marketing Strategies</h5><p>Created strategic recommendations to boost student engagement.</p></div>
-            <div class="col-md-4 project-card" data-category="health"><h5>Chronic Disease Indicator</h5><p>Investigated CVD mortality trends (2011-2014) with 89.5% accuracy.</p></div>
-            <div class="col-md-4 project-card" data-category="forecasting"><h5>Future Price Prediction of Commodities</h5><p>Developed a hybrid forecasting model (95% accuracy).</p></div>
-            <div class="col-md-4 project-card" data-category="finance"><h5>Payroll Management System</h5><p>Developed an automated payroll system optimizing tax deductions.</p></div>
+    <!-- Blog Section -->
+    <section id="blog" class="container my-5">
+        <h2 class="text-center">Blog</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">How GenAI is Revolutionizing Data Analytics</h5>
+                        <p class="card-text">Exploring how Generative AI is transforming business intelligence and data-driven decision-making.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Machine Learning for Financial Forecasting</h5>
+                        <p class="card-text">How predictive models can optimize financial strategies and market predictions.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section id="data-visuals" class="container my-5">
+        <h2 class="text-center">Data Visualizations</h2>
+        <canvas id="dataChart"></canvas>
     </section>
 
     <!-- Contact Section -->
@@ -78,19 +100,30 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        document.getElementById('projectSearch').addEventListener('keyup', function() {
-            let filter = this.value.toLowerCase();
-            let projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach(card => {
-                let text = card.textContent.toLowerCase();
-                if (text.includes(filter)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = '☀️ Light Mode';
+            } else {
+                this.textContent = '🌙 Dark Mode';
+            }
+        });
+
+        // Data Visualization with Chart.js
+        const ctx = document.getElementById('dataChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue ($K)',
+                    data: [50, 75, 60, 90, 120, 80],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                }]
+            }
         });
     </script>
 </body>
