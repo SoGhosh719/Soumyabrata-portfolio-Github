@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -35,7 +38,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
+    <header class="bg-primary text-white text-center py-5 animate__animated animate__fadeInDown">
         <div class="container">
             <h1>Welcome to My Portfolio</h1>
             <p class="lead">Business Analytics | GenAI | Data Science | Financial Services</p>
@@ -43,7 +46,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container my-5">
+    <section id="about" class="container my-5 animate__animated animate__fadeInLeft">
         <h2 class="text-center">About Me</h2>
         <p class="text-center">
             A seasoned Business Operations Manager and Analyst with over three years of experience in the financial services sector. Proven expertise in process improvement and business analysis, including leveraging GenAI to enhance productivity by 31% and driving a $52K revenue increase. Skilled in SQL, data analysis tools, and collaborating across departments to optimize systems and workflows.
@@ -53,20 +56,18 @@
     <!-- Projects Section -->
     <section id="projects" class="container my-5">
         <h2 class="text-center">Projects</h2>
-        <div class="row">
-            <div class="col-md-4"><h5>Hospital Readmission Analysis</h5><p>Identified high-risk groups (70% readmission rate) using data-driven analysis and developed predictive models (XGBoost, ROC-AUC: 0.69) to optimize readmission predictions.</p></div>
-            <div class="col-md-4"><h5>Hanover Theatre Marketing Strategies</h5><p>Created strategic recommendations to boost student engagement at The Hanover Theatre through tailored initiatives.</p></div>
-            <div class="col-md-4"><h5>Chronic Disease Indicator and Customer Segmentation</h5><p>Investigated CVD mortality trends (2011-2014) with 89.5% accuracy indicating metrics to improve public health.</p></div>
-            <div class="col-md-4"><h5>Future Price Prediction of Commodities</h5><p>Developed a hybrid forecasting model (95% accuracy) integrating ARIMA and Random Forest to predict prices of commodities such as Gold, Silver, Copper, Platinum, and Palladium in correlation with Oil.</p></div>
-            <div class="col-md-4"><h5>Payroll Management System for Small Business</h5><p>Developed a payroll system automating calculations, tax deductions, and compensation tracking, streamlining small business operations.</p></div>
-            <div class="col-md-4"><h5>Supply Chain Management System for Walmart</h5><p>Conducted an in-depth analysis of Walmart's U.S. supply chain management system, focusing on operational efficiency, sustainability, and economic impact.</p></div>
-            <div class="col-md-4"><h5>Analysis of World Uncertainty Index for Taiwan</h5><p>Correlated the World Uncertainty Index with GDP growth and trade data to assess Taiwan's economic resilience and performed data analysis and trend visualization.</p></div>
-            <div class="col-md-4"><h5>Market Value Analysis of Football Players at EPL</h5><p>Conducted in-depth analysis of a large-scale football dataset, covering player performance, club trends, market valuations, and predictive modeling.</p></div>
+        <input type="text" id="projectSearch" class="form-control mb-3" placeholder="Search Projects...">
+        <div class="row" id="projectContainer">
+            <div class="col-md-4 project-card" data-category="analytics"><h5>Hospital Readmission Analysis</h5><p>Developed predictive models (XGBoost, ROC-AUC: 0.69) to optimize readmission predictions.</p></div>
+            <div class="col-md-4 project-card" data-category="marketing"><h5>Hanover Theatre Marketing Strategies</h5><p>Created strategic recommendations to boost student engagement.</p></div>
+            <div class="col-md-4 project-card" data-category="health"><h5>Chronic Disease Indicator</h5><p>Investigated CVD mortality trends (2011-2014) with 89.5% accuracy.</p></div>
+            <div class="col-md-4 project-card" data-category="forecasting"><h5>Future Price Prediction of Commodities</h5><p>Developed a hybrid forecasting model (95% accuracy).</p></div>
+            <div class="col-md-4 project-card" data-category="finance"><h5>Payroll Management System</h5><p>Developed an automated payroll system optimizing tax deductions.</p></div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
+    <section id="contact" class="bg-light py-5 animate__animated animate__fadeInUp">
         <div class="container text-center">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:soumyabrata11411@gmail.com">soumyabrata11411@gmail.com</a></p>
@@ -78,7 +79,19 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/script.js"></script>
-
+    <script>
+        document.getElementById('projectSearch').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                let text = card.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
