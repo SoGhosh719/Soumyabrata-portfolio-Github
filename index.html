@@ -10,26 +10,82 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Soumyabrata Ghosh</h1>
-        <p>Business Analytics | GenAI | Data Science | Financial Services</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Soumyabrata Ghosh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="lead">Business Analytics | GenAI | Data Science | Financial Services</p>
+        </div>
     </header>
-    <section>
-        <h2>About Me</h2>
-        <p>A seasoned Business Operations Manager and Analyst with expertise in AI-driven automation and data analysis.</p>
+
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center">About Me</h2>
+        <p class="text-center">A seasoned Business Operations Manager and Analyst with expertise in AI-driven automation and data analysis.</p>
     </section>
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://your-link.com/hospital-readmission">Hospital Readmission Analysis</a></li>
-            <li><a href="https://your-link.com/hanover-theatre">Hanover Theatre Marketing Strategies</a></li>
-            <li><a href="https://your-link.com/epl-analysis">Market Value Analysis of EPL Players</a></li>
-        </ul>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h2 class="text-center">Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hospital Readmission Analysis</h5>
+                        <p class="card-text">Developed predictive models (XGBoost, ROC-AUC: 0.69) to optimize readmission predictions.</p>
+                        <a href="https://your-link.com/hospital-readmission" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hanover Theatre Marketing Strategies</h5>
+                        <p class="card-text">Designed tailored marketing strategies and inclusive programs to boost student engagement.</p>
+                        <a href="https://your-link.com/hanover-theatre" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">EPL Player Market Value Analysis</h5>
+                        <p class="card-text">Analyzed EPL player performance, club trends, and market valuations.</p>
+                        <a href="https://your-link.com/epl-analysis" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>Contact: <a href="mailto:soumyabrata11411@gmail.com">soumyabrata11411@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/your-username">your-username</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile">your-profile</a></p>
-    </footer>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:soumyabrata11411@gmail.com">soumyabrata11411@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/your-username">your-username</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/your-profile">your-profile</a></p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (for dropdown menu & responsive navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
