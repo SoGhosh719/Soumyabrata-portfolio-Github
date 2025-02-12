@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: soghosh719/Soumyabrata-portfolio-Github  # Replace with your repo name
+  branch: main
+
+media_folder: "assets/uploads" # Where images are stored
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
