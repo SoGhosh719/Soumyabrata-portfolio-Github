@@ -57,45 +57,40 @@
             
             <!-- Project 1 -->
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hospital Readmission Analysis</h5>
-                        <p class="card-text">
-                            Developed predictive models (XGBoost, ROC-AUC: 0.69) to optimize readmission predictions.
-                        </p>
-                        <a href="https://your-link.com/hospital-readmission" class="btn btn-primary">View Project</a>
-                    </div>
+                <div class="project-card" onclick="openModal('project1')">
+                    <img src="assets/project1.jpg" alt="Hospital Readmission Analysis" class="img-fluid">
+                    <h3>Hospital Readmission Analysis</h3>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hanover Theatre Marketing Strategies</h5>
-                        <p class="card-text">
-                            Designed tailored marketing strategies and inclusive programs to boost student engagement.
-                        </p>
-                        <a href="https://your-link.com/hanover-theatre" class="btn btn-primary">View Project</a>
-                    </div>
+                <div class="project-card" onclick="openModal('project2')">
+                    <img src="assets/project2.jpg" alt="EPL Player Market Value" class="img-fluid">
+                    <h3>EPL Player Market Value</h3>
                 </div>
             </div>
 
             <!-- Project 3 -->
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">EPL Player Market Value Analysis</h5>
-                        <p class="card-text">
-                            Analyzed EPL player performance, club trends, and market valuations.
-                        </p>
-                        <a href="https://your-link.com/epl-analysis" class="btn btn-primary">View Project</a>
-                    </div>
+                <div class="project-card" onclick="openModal('project3')">
+                    <img src="assets/project3.jpg" alt="Walmart Supply Chain" class="img-fluid">
+                    <h3>Walmart Supply Chain</h3>
                 </div>
             </div>
 
         </div>
     </section>
+
+    <!-- Modal (Popup for Projects) -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <a id="modalLink" class="btn btn-primary" target="_blank">View Project</a>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="bg-light py-5">
@@ -107,8 +102,10 @@
         </div>
     </section>
 
-    <!-- Bootstrap JS (for dropdown menu & responsive navbar) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
